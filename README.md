@@ -1,4 +1,4 @@
-# kaspersky_nuxt
+# kaspersky_nev (Nuxt, Express, Vue) 
 
 > Nuxt.js project
 
