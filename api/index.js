@@ -46,7 +46,15 @@ app.get('/logs', function(req, res){
 
 app.get('/data', function(req, res){
 	client.lrange('data', 0, -1, function(err, reply) {
-	   let result = reply.map((el,idx)=>idx !== 0 ? JSON.parse(el) : 0);
+	    let result = reply.map((el,idx)=>{
+			let res;			
+			try{
+				res = JSON.parse(el);
+			} catch(e){
+				console.log(e);			
+			}
+			return res;
+	   });
 	   res.json(result);
 	});
 });
